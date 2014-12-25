@@ -1,0 +1,163 @@
+body {
+    overflow: hidden;
+    display: block;
+    border: 0;
+    padding: 0;
+    background: #FFFFFF;
+    margin: 0;
+    -webkit-padding-start: 0;
+    -webkit-margin-start: 0;
+    -moz-padding-start: 0;
+    -moz-margin-start: 0;
+    text-align:center;
+    font-family: Didot, Georgia, 'Times New Roman', Times, serif;
+    font-size: calc;
+    height: 100%;
+    vertical-align: middle;
+    overflow-x: auto; 
+    overflow-y: auto;
+}
+
+a {
+    color: #000000;
+}
+
+div, body, img {
+    -webkit-padding-start: 0;
+    -webkit-margin-start: 0;
+    -moz-padding-start: 0;
+    -moz-margin-start: 0;
+}
+
+h1 {
+    padding-top: 10px;
+}
+
+h2 {
+    
+}
+
+.abstract {
+    padding-left: 0;
+    padding-right: o;
+    width: 25%;
+    top: 20%;
+    right: 0;
+    vertical-align: middle;
+    position: fixed;
+}
+
+div.verses {
+/*    margin: auto; */
+    top: 0;
+    left: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 75%;
+    position: fixed;
+}
+
+.verse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.verse1 {
+    top: 21%;
+    left: 0;
+    width: 30%;
+    position: absolute;
+}
+
+.verse2 {
+    position: absolute;
+    top: 0;
+    left: 29.8%;
+    width: 38%;
+}
+
+.verse3 {
+    position: absolute;
+    top: 52%;
+    left: 29.95%;
+    width: 30%;
+}
+
+.verse4 {
+    position: absolute;
+    top: 8%;
+    left: 67.7%;
+    width: 32.2%;
+}
+
+.verse5 {
+    position: absolute;
+    top: 52.2%;
+    left: 59.8%;
+    width: 34.6%;
+}
+
+
+.right_margin {
+    float: right;
+    border: 2px solid black;
+}
+
+.abstract {
+    float: right;
+    padding: 0px 0px 0px 0px;
+}
+
+
+.abstract.h1 .abstract.h2 {
+/*    text-align: center;*/
+}
+
+.detail {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    padding: 10px 10px 10px 10px;
+    background-color: #FFFFFF;
+    background-color: rgba(255,255,255,1);
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    z-index: 1;
+    background-color: #000000;
+    background-color: rgba(0,0,0,.6);
+}
+
+.full_screen{
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background-color: #FFFFFF;
+}
+
+.ratio {
+    width: 100%;
+    vertical-align: middle;
+    padding-top: 54.3%;
+    position: relative;
+}
+
+.inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
