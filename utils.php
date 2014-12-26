@@ -1,0 +1,91 @@
+<?php
+require './config.php';
+
+$br = get(array("cli" => "\n",
+                "cgi-fcgi" => "\n",
+                "cli-server" => "<br/>")[PHP_SAPI], "<br/>");
+
+function is_picture($file)
+{
+    return in_array(strtolower(array_pop(explode(".", $file))), array("jpg", "png", "gif", "bmp", "jpeg"));
+}
+
+function get_img_list($img_list, $params=array()) {
+    // Retreive, set (or reset) an image list
+    try {
+        session_start();
+    }
+    catch (Exception $e) {
+        // pokemon!
+    }
+
+
+    if (get($params["debug"], false) == true) {
+        print_debug("retreiving img list for ".$img_list);
+    }
+
+    if (! array_key_exists($img_list, get($_SESSION, array())) or
+        get($params["force_refresh"], false) == true)
+    {
+        $file_path = get_config($img_list, "path");
+        if (get($params["debug"], false) == true) {
+            print_debug("Compute image list from '".$file_path."'");
+        }
+        $file_list = array();
+        if ($handle = opendir($file_path)) {
+            while (false !== ($file = readdir($handle))) {
+                if ($file != "." && $file != "..") {
+                    $file_list[] = $file;
+                }
+            }
+            closedir($handle);
+        }
+        $file_list = array_filter($file_list, "is_picture");
+        $_SESSION[$img_list] = array_values($file_list);
+        if (get_config($img_list, "random", false) == true) {
+            shuffle($_SESSION[$img_list]);
+        }
+        else {
+            sort($_SESSION[$img_list]);
+        }
+    }
+    elseif (get($params["debug"], false) == true) {
+        print_debug("Retreiving image list from SESSION");
+    }
+
+    if (get($params["debug"], false) == true) {
+        print_debug(count($_SESSION[$img_list])." img found");
+    }
+
+    return $_SESSION[$img_list];
+}
+
+function print_debug($text) {
+    global $br;
+    print($text.$br);
+}
+
+function get_img($img_list, $params=array()) {
+    $list = get_img_list($img_list, $params);
+    $refresh = get_config($img_list, "refresh");
+    $image_path = get_config($img_list, "path")."/".$list[(time() / $refresh % count($list))];
+    if (get($params["debug"], false) == true) {
+        print_debug("image is valid for ".$refresh."s");
+        print_debug("displayed img: '".$image_path."'");
+    }
+
+    return $image_path;
+}
+
+function get(&$var, $default=null) {
+    return isset($var) ? $var : $default;
+}
+
+function get_config($img_list, $key, $default=null) {
+    if (! array_key_exists($img_list, $GLOBALS["config"])) {
+        throw new InvalidArgumentException("Unknown img list:".$img_list, 1);
+    }
+    return get($GLOBALS["config"][$img_list][$key], $default);
+}
+
+?>

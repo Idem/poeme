@@ -1,14 +1,9 @@
-    setInterval(function(){refresh_verse('1');}, 17000);
-    setInterval(function(){refresh_verse('2');}, 18000);
-    setInterval(function(){refresh_verse('3');}, 19000);
-    setInterval(function(){refresh_verse('4');}, 20000);
-    setInterval(function(){refresh_verse('5');}, 21000);
 
     $(window).bind("resize", function(){update_pos();});
 
     function refresh_verse(id)
     {
-        var p = document.getElementById("verse" + id);
+        var p = document.getElementById(id);
         p.src = "verse.php?id=" + id + "&" + Date.parse(new Date());
     }
 

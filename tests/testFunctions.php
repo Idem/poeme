@@ -1,5 +1,5 @@
 <?php
-require_once './functions.php';
+require_once './utils.php';
 
 class FunctionTest extends PHPUnit_Framework_TestCase
 {
@@ -9,6 +9,39 @@ class FunctionTest extends PHPUnit_Framework_TestCase
 	public function testIsPicture($file, $result){
 		$this->assertEquals(is_picture($file), $result);
 	}
+
+    public function testConfigLoader() {
+        $this->assertArrayHasKey("config", $GLOBALS);
+        $this->assertEquals(array("verse1", "verse2", "verse3", "verse4", "verse5"),
+                            array_keys($GLOBALS["config"]));
+    }
+
+    /**
+    * @expectedException InvalidArgumentException
+    * @expectedExceptionMessage Unknown img list:NonExisting
+    * @depends testConfigLoader
+    */
+    public function testNonExistingImgList() {
+        get_config("NonExisting", "anykey");
+    }
+
+    /**
+    * @depends testConfigLoader
+    */
+    public function testImgList() {
+        $sorted_list = get_img_list("verse1");
+        sort($sorted_list);
+        $this->assertEquals(array("img_001.png", "img_002.jpeg"),
+                            $sorted_list);
+    }
+
+    /**
+    * @depends testImgList
+    */
+    public function testImg() {
+        $this->assertEquals("./tests/verse4/img_000.gif",
+                            get_img("verse4", array("debug"=>true)));
+    }
 
 	public function fileList()
     {

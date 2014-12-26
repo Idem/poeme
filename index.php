@@ -1,5 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+require './config.php';
+?>
 <head>
     <link rel="stylesheet" type="text/css" href="./poem.css" media="screen"/>
     <meta name="author" content="Christophe Berhault">
@@ -36,31 +39,41 @@ themes.</p>
 <br/><br/>
 <p><a href="http://poeme.me">poeme.me</a> est un po&egrave;me visuel en cinq &eacute;crans.</p>
 <p>A chaque &eacute;cran correspond l&#39;une des cinq strophes du po&egrave;me. <br/>
-Les strophes sont plus ou moins longues et compos&eacute;es <br/>d&#39;un ensemble sp&eacute;cifique 
+Les strophes sont plus ou moins longues et compos&eacute;es <br/>d&#39;un ensemble sp&eacute;cifique
 d&#39;images (entre 2000 et 7000).<br/>
 Les images se succ&egrave;dent de mani&egrave;re al&eacute;atoire.<br/>
 Leur temps d&#39;exposition varie, selon  les &eacute;crans, de 17 &agrave; 21 secondes.<br/>
-L&#39;alternance non contr&ocirc;l&eacute;e des images conjugu&eacute;e au l&eacute;ger d&eacute;calage de l&#39;affichage 
-et &agrave; la dur&eacute;e variable des strophes d&eacute;multiplie les associations possibles. Et 
+L&#39;alternance non contr&ocirc;l&eacute;e des images conjugu&eacute;e au l&eacute;ger d&eacute;calage de l&#39;affichage
+et &agrave; la dur&eacute;e variable des strophes d&eacute;multiplie les associations possibles. Et
 renforce l&#39;aspect obsessionnel de certains th&egrave;mes.</p>
-<p>Christophe Berhault &agrave; photographi&eacute; &agrave; Berlin entre 2008 et 2012 cet ensemble 
-de 26 600  images. Il les a s&eacute;lectionn&eacute;es au fil des jours et au gr&eacute; de l&#39;humeur, 
-selon le hasard, l&#39;actualit&eacute;, les trouvailles, dans des livres d&#39;occasion, des 
+<p>Christophe Berhault &agrave; photographi&eacute; &agrave; Berlin entre 2008 et 2012 cet ensemble
+de 26 600  images. Il les a s&eacute;lectionn&eacute;es au fil des jours et au gr&eacute; de l&#39;humeur,
+selon le hasard, l&#39;actualit&eacute;, les trouvailles, dans des livres d&#39;occasion, des
 journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
 <p><a href="http://poeme.me">poeme.me</a> &eacute;voque l&#39;&eacute;criture automatique. Les cadavres exquis.</p>
    </div>
     <div id="verses" class="verses">
 <div class="ratio">
-<div class="inner">
-        <img id="verse1" class="verse1" src="verse.php?id=1&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
-        <img id="verse2" class="verse2" src="verse.php?id=2&get=2" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
-        <img id="verse3" class="verse3" src="verse.php?id=3&get=3" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
-        <img id="verse4" class="verse4" src="verse.php?id=4&get=4" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
-        <img id="verse5" class="verse5" src="verse.php?id=5&get=5" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
-</div></div>
+    <div class="inner">
+<?php
+    foreach (array_keys($config) as $key){
+?>
+        <img id="<?=$key?>" class="<?=$key?>" src="verse.php?id=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
+<?php  }
+?>
+    </div>
+</div>
     </div>
     <div id="overlay" class="overlay"></div>
     <script type="text/javascript" src="./jquery.min.js"></script>
     <script type="text/javascript" src="./poem.js"></script>
+    <script type="text/javascript">
+<?php
+    foreach ($config as $key => $settings){
+?>
+        setInterval(function(){refresh_verse('<?=$key?>');}, <?=$settings["refresh"]?>000);
+<?php  }
+?>
+    </script>
 </body>
 </html>
