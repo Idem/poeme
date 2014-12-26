@@ -1,9 +1,10 @@
 <?php
 require './config.php';
 
-$br = get(array("cli" => "\n",
-                "cgi-fcgi" => "\n",
-                "cli-server" => "<br/>")[PHP_SAPI], "<br/>");
+$br_table = array("cli" => "\n",
+                  "cgi-fcgi" => "<br/>",
+                  "cli-server" => "<br/>");
+$br = get($br_table[php_sapi_name()], "<br/>");
 
 function is_picture($file)
 {

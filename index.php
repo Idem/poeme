@@ -23,13 +23,13 @@ require './config.php';
         <h2>Christophe Berhault</h2>
         <p><a href="http://poeme.me">poeme.me</a> is a visual poem in five screens<br/>
 Each screen corresponds to one of the five strophes of the poem.<br/>
-The strophes are of varying lengths and are composed <br/>of a specific group of 
+The strophes are of varying lengths and are composed <br/>of a specific group of
 images (between 2000 and 7000).<br/>
 The images follow one another in an order that is random.<br/>
 Their exposure time varies, for each screen, from 17 to 21 seconds.<br/>
 The uncontrolled switching of the images, combined with the slight time-lapse of
-their showing and the varying length of the strophes, mean that the possible 
-associations are almost infinite. And reinforce the obsessive nature of certain 
+their showing and the varying length of the strophes, mean that the possible
+associations are almost infinite. And reinforce the obsessive nature of certain
 themes.</p>
 <p>Christophe Berhault photographed this set of 26 600 images in Berlin between 2008 and 2012. He selected them day by day and according to his mood, but also chance, the news, and his findings, in second-hand books, newspapers and tabloids, postcards and brochures....
 </p>
