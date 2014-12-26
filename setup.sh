@@ -6,4 +6,7 @@ case $1 in
         curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
         php bin/composer.phar install
         ;;
+    test)
+        vendor/phpunit/phpunit/phpunit --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
+    ;;
 esac
