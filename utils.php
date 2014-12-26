@@ -6,9 +6,10 @@ $br_table = array("cli" => "\n",
                   "cli-server" => "<br/>");
 $br = get($br_table[php_sapi_name()], "<br/>");
 
-function is_picture($file)
+function is_picture($file_name)
 {
-    return in_array(strtolower(array_pop(explode(".", $file))), array("jpg", "png", "gif", "bmp", "jpeg"));
+    // return true if provided filename is accepted image.
+    return in_array(strtolower(array_pop(explode(".", $file_name))), array("jpg", "png", "gif", "bmp", "jpeg"));
 }
 
 function get_img_list($img_list, $params=array()) {
@@ -62,11 +63,13 @@ function get_img_list($img_list, $params=array()) {
 }
 
 function print_debug($text) {
+    // print a debug line and line break
     global $br;
     print($text.$br);
 }
 
 function get_img($img_list, $params=array()) {
+    // Retreive current image file_name to display for an image list
     $list = get_img_list($img_list, $params);
     $refresh = get_config($img_list, "refresh");
     $image_path = get_config($img_list, "path")."/".$list[(time() / $refresh % count($list))];
@@ -79,10 +82,12 @@ function get_img($img_list, $params=array()) {
 }
 
 function get(&$var, $default=null) {
+    // return a value with a default is array key do not exists
     return isset($var) ? $var : $default;
 }
 
 function get_config($img_list, $key, $default=null) {
+    // return the config value for an image list + key
     if (! array_key_exists($img_list, $GLOBALS["config"])) {
         throw new InvalidArgumentException("Unknown img list:".$img_list, 1);
     }
