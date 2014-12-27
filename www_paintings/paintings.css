@@ -1,0 +1,96 @@
+body {
+    overflow: hidden;
+    display: block;
+    border: 0;
+    padding: 0;
+    background: #FFFFFF;
+    margin: 0;
+    -webkit-padding-start: 0;
+    -webkit-margin-start: 0;
+    -moz-padding-start: 0;
+    -moz-margin-start: 0;
+    text-align:center;
+    font-family: Didot, Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    height: 100%;
+    /*vertical-align: middle;*/
+}
+
+a {
+    color: #000000;
+}
+
+div, body, img {
+    -webkit-padding-start: 0;
+    -webkit-margin-start: 0;
+    -moz-padding-start: 0;
+    -moz-margin-start: 0;
+}
+
+h1 {
+    padding-top: 70px;
+}
+
+h2 {
+    padding-bottom: 40px;
+}
+
+.abstract p {
+    padding-top: 30px;
+}
+
+div.embeded_screen {
+/*    margin: auto; */
+    display: inline-block;
+    /*float: left;*/
+    text-align: center;
+    vertical-align: middle;
+    width: 70%;
+}
+
+img.painting {
+    height: 100%;
+}
+
+.right_margin {
+    float: right;
+    border: 2px solid black;
+}
+
+.abstract {
+    float: right;
+    text-align: center;
+    padding: 15px 10px 15px 10px;
+}
+
+.detail {
+    /*overflow: hidden;*/
+    display: none;
+    position: absolute;
+    z-index: 100;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(255,255,255,1);
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    z-index: 1;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,.6);
+}
+
+.full_screen{
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background-color: #FFFFFF;
+}
