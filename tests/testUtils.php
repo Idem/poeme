@@ -31,7 +31,7 @@ class FunctionTest extends PHPUnit_Framework_TestCase
     public function testImgList() {
         $sorted_list = get_img_list("verse1");
         sort($sorted_list);
-        $this->assertEquals(array("img_001.png", "img_002.jpeg"),
+        $this->assertEquals(array("img_1.gif", "img_2.jpeg"),
                             $sorted_list);
     }
 
@@ -39,7 +39,7 @@ class FunctionTest extends PHPUnit_Framework_TestCase
     * @depends testImgList
     */
     public function testImg() {
-        $this->assertEquals("./tests/verse4/img_000.gif",
+        $this->assertEquals("./tests/verse4/img_1.gif",
                             get_img("verse4", array("debug"=>true)));
     }
 
