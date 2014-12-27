@@ -1,8 +1,7 @@
 
     $(window).bind("resize", function(){update_pos();});
 
-    function refresh_verse(id)
-    {
+    function refresh_verse(id){
         var p = document.getElementById(id);
         p.src = "verse.php?id=" + id + "&" + Date.parse(new Date());
     }
@@ -15,7 +14,8 @@
             var window_height=$(window).height();
             var detail_height=d.height();
             d.css("top", (window_height - detail_height) / 2);
-        }
+    }
+
     function toggle_detail(showOrHide){
         if (showOrHide !== false) {
             showOrHide = 250;
@@ -23,6 +23,7 @@
         $('#detail').toggle(showOrHide);
         $('#overlay').toggle(showOrHide);
     }
+
     function full_screen(hide){
         p = $('#verses');
         if (p.hasClass('full_screen') | hide === false){
@@ -33,7 +34,8 @@
             p.removeClass('verses');
         }
     }
-    $(document).bind ('keyup.detail', function (k) {
+
+    $(document).bind ('keyup.detail', function (k){
         if (k.keyCode == 27) {
             toggle_detail(false);
             full_screen(false);
