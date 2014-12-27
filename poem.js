@@ -3,7 +3,7 @@
 
     function refresh_verse(id){
         var p = document.getElementById(id);
-        p.src = "verse.php?id=" + id + "&" + Date.parse(new Date());
+        p.src = "?image=" + id + "&" + Date.parse(new Date());
     }
 
     function update_pos(){

@@ -1,8 +1,18 @@
+<?php
+require_once './utils.php';
+
+if (get($_GET['image'])) {
+    $img_path = get_img(get($_GET['image']), $_GET);
+    if ( get($_GET['debug'], false) == false) {
+        header("Content-Type: image/jpeg");
+        header("No-Cache: True");
+        readfile($img_path);
+    }
+}
+else
+{ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php
-require './config.php';
-?>
 <head>
     <link rel="stylesheet" type="text/css" href="./poem.css" media="screen"/>
     <meta name="author" content="Christophe Berhault">
@@ -58,7 +68,7 @@ journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
 <?php
     foreach (array_keys($config) as $key){
 ?>
-        <img id="<?=$key?>" class="<?=$key?>" src="verse.php?id=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
+        <img id="<?=$key?>" class="<?=$key?>" src="?image=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
 <?php  }
 ?>
     </div>
@@ -77,3 +87,4 @@ journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
     </script>
 </body>
 </html>
+<?php } ?>
