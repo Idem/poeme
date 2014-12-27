@@ -62,7 +62,7 @@ selon le hasard, l&#39;actualit&eacute;, les trouvailles, dans des livres d&#39;
 journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
 <p><a href="http://poeme.me">poeme.me</a> &eacute;voque l&#39;&eacute;criture automatique. Les cadavres exquis.</p>
    </div>
-    <div id="verses" class="verses">
+    <div id="img_container" class="embeded_screen">
 <div class="ratio">
     <div class="inner">
 <?php
@@ -81,7 +81,7 @@ journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
 <?php
     foreach ($config as $key => $settings){
 ?>
-        setInterval(function(){refresh_verse('<?=$key?>');}, <?=$settings["refresh"]?>000);
+        setInterval(function(){refresh_image('<?=$key?>');}, <?=$settings["refresh"]?>000);
 <?php  }
 ?>
     </script>

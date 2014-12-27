@@ -14,7 +14,7 @@ body {
     font-size: calc;
     height: 100%;
     vertical-align: middle;
-    overflow-x: auto; 
+    overflow-x: auto;
     overflow-y: auto;
 }
 
@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-    
+
 }
 
 .abstract {
@@ -47,7 +47,7 @@ h2 {
     position: fixed;
 }
 
-div.verses {
+div.embeded_screen {
 /*    margin: auto; */
     top: 0;
     left: 0;

@@ -1,7 +1,7 @@
 
     $(window).bind("resize", function(){update_pos();});
 
-    function refresh_verse(id){
+    function refresh_image(id){
         var p = document.getElementById(id);
         p.src = "?image=" + id + "&" + Date.parse(new Date());
     }
@@ -25,13 +25,13 @@
     }
 
     function full_screen(hide){
-        p = $('#verses');
+        p = $('#img_container');
         if (p.hasClass('full_screen') | hide === false){
             p.removeClass('full_screen');
-            p.addClass('verses');
+            p.addClass('embeded_screen');
         } else {
             p.addClass('full_screen');
-            p.removeClass('verses');
+            p.removeClass('embeded_screen');
         }
     }
 
