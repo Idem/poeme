@@ -1,5 +1,5 @@
 <?php
-require_once './utils.php';
+require_once '../utils.php';
 
 if (get($_GET['image'])) {
     $img_path = get_img(get($_GET['image']), $_GET);
