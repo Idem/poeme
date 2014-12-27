@@ -27,7 +27,8 @@ function get_img_list($img_list, $params=array()) {
     }
 
     if (! array_key_exists($img_list, get($_SESSION, array())) or
-        get($params["force_refresh"], false) == true)
+        get($params["force_refresh"], false) == true or
+        count($_SESSION[$img_list]) == 0)
     {
         $file_path = get_config($img_list, "path");
         if (get($params["debug"], false) == true) {
