@@ -7,6 +7,32 @@ case $1 in
         php bin/composer.phar install
         ;;
     test)
+        cat <<EOF > ./test_config.ini
+[verse1]
+path = "./tests/verse1"
+refresh = 3
+random = true
+
+[verse2]
+path = "./tests/verse2"
+refresh = 5
+random = true
+
+[verse3]
+path = "./tests/verse3"
+refresh = 4
+random = true
+
+[verse4]
+path = "./tests/verse4"
+refresh = 2
+random = true
+
+[verse5]
+path = "./tests/verse5"
+refresh = 4
+random = true
+EOF
         vendor/phpunit/phpunit/phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
     ;;
     images)
