@@ -13,7 +13,6 @@ body {
     font-family: Didot, Georgia, 'Times New Roman', Times, serif;
     font-size: 15px;
     height: 100%;
-    /*vertical-align: middle;*/
 }
 
 a {
@@ -52,11 +51,6 @@ img.painting {
     height: 100%;
 }
 
-.right_margin {
-    float: right;
-    border: 2px solid black;
-}
-
 .abstract {
     float: right;
     text-align: center;
@@ -64,7 +58,6 @@ img.painting {
 }
 
 .detail {
-    /*overflow: hidden;*/
     display: none;
     position: absolute;
     z-index: 100;

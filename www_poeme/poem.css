@@ -14,8 +14,6 @@ body {
     font-size: calc;
     height: 100%;
     vertical-align: middle;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 
 a {
@@ -48,21 +46,12 @@ h2 {
 }
 
 div.embeded_screen {
-/*    margin: auto; */
     top: 0;
     left: 0;
     display: inline-block;
     vertical-align: middle;
     width: 75%;
     position: fixed;
-}
-
-.verse {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
 .verse1 {
@@ -98,12 +87,6 @@ div.embeded_screen {
     top: 52.2%;
     left: 59.8%;
     width: 34.6%;
-}
-
-
-.right_margin {
-    float: right;
-    border: 2px solid black;
 }
 
 .abstract {
