@@ -46,7 +46,7 @@ themes.</p>
 <p><a href="http://poeme.me">poeme.me</a> evokes automatic writing. Exquisite corpses.</p>
         <p><a target="_blank" href="http://www.christophe-berhault.com/">http://www.christophe-berhault.com</a></p>
         <p><a target="_blank" href="mailto:contact@25000paintings.com">contact@25000paintings.com</a></p>
-<br/><br/>
+<br/>
 <p><a href="http://poeme.me">poeme.me</a> est un po&egrave;me visuel en cinq &eacute;crans.</p>
 <p>A chaque &eacute;cran correspond l&#39;une des cinq strophes du po&egrave;me. <br/>
 Les strophes sont plus ou moins longues et compos&eacute;es <br/>d&#39;un ensemble sp&eacute;cifique
@@ -63,16 +63,16 @@ journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
 <p><a href="http://poeme.me">poeme.me</a> &eacute;voque l&#39;&eacute;criture automatique. Les cadavres exquis.</p>
    </div>
     <div id="img_container" class="embeded_screen">
-<div class="ratio">
-    <div class="inner">
+        <div class="ratio">
+            <div class="inner">
 <?php
     foreach (array_keys($config) as $key){
 ?>
-        <img id="<?=$key?>" class="<?=$key?>" src="?image=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
+              <img id="<?=$key?>" class="<?=$key?>" src="?image=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="Po&egrave;me by Christophe Berhault"/>
 <?php  }
 ?>
-    </div>
-</div>
+            </div>
+        </div>
     </div>
     <div id="overlay" class="overlay"></div>
     <script type="text/javascript" src="./jquery.min.js"></script>

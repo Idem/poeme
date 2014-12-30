@@ -31,10 +31,6 @@ h1 {
     padding-top: 10px;
 }
 
-h2 {
-
-}
-
 .abstract {
     padding-left: 0;
     padding-right: o;
@@ -54,49 +50,10 @@ div.embeded_screen {
     position: fixed;
 }
 
-.verse1 {
-    top: 21%;
-    left: 0;
-    width: 30%;
-    position: absolute;
-}
-
-.verse2 {
-    position: absolute;
-    top: 0;
-    left: 29.8%;
-    width: 38%;
-}
-
-.verse3 {
-    position: absolute;
-    top: 52%;
-    left: 29.95%;
-    width: 30%;
-}
-
-.verse4 {
-    position: absolute;
-    top: 8%;
-    left: 67.7%;
-    width: 32.2%;
-}
-
-.verse5 {
-    position: absolute;
-    top: 52.2%;
-    left: 59.8%;
-    width: 34.6%;
-}
 
 .abstract {
     float: right;
     padding: 0px 0px 0px 0px;
-}
-
-
-.abstract.h1 .abstract.h2 {
-/*    text-align: center;*/
 }
 
 .detail {
@@ -147,4 +104,39 @@ div.embeded_screen {
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.verse1 {
+    top: 21%;
+    left: 0;
+    width: 30%;
+    position: absolute;
+}
+
+.verse2 {
+    position: absolute;
+    top: 0;
+    left: 29.8%;
+    width: 38%;
+}
+
+.verse3 {
+    position: absolute;
+    top: 52%;
+    left: 29.95%;
+    width: 30%;
+}
+
+.verse4 {
+    position: absolute;
+    top: 8%;
+    left: 67.7%;
+    width: 32.2%;
+}
+
+.verse5 {
+    position: absolute;
+    top: 52.2%;
+    left: 59.8%;
+    width: 34.6%;
 }

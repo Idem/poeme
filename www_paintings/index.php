@@ -52,12 +52,16 @@ Personal stories join hands with History, for this hypnotizing link-up of shots 
         <p><a target="_blank" href="mailto:contact@25000paintings.com">contact@25000paintings.com</a></p>
     </div>
     <div id="img_container" class="embeded_screen">
+        <div class="ratio">
+            <div class="inner">
 <?php
     foreach (array_keys($config) as $key){
 ?>
-        <img id="<?=$key?>" class="<?=$key?>" src="?image=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="25000 paintings by Christophe Berhault"/>
+                <img id="<?=$key?>" class="<?=$key?>" src="?image=<?=$key?>&get=1" onclick="javascript:full_screen();" alt="25000 paintings by Christophe Berhault"/>
 <?php  }
 ?>
+            </div>
+        </div>
     </div>
     <div id="overlay" class="overlay"></div>
     <script type="text/javascript" src="./jquery.min.js"></script>
