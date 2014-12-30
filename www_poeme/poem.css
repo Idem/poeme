@@ -102,10 +102,14 @@ div.embeded_screen {
 .detail {
     display: none;
     position: absolute;
+    top: 0;
+    height: 100%;
     z-index: 100;
-    padding: 10px 10px 10px 10px;
+    padding: 0px 0px 0px 0px;
     background-color: #FFFFFF;
     background-color: rgba(255,255,255,1);
+    overflow-x: auto;
+    overflow-y: absolute;
 }
 
 .overlay{
