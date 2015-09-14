@@ -1,11 +1,8 @@
 language: php
 php:
-  - 5.4
-  - 5.5
   - 5.6
   - hhvm
-  - nightly
-  
+
 before_script:
   - |
     cat <<EOF > ./test_config.ini
