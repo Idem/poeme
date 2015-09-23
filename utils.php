@@ -7,10 +7,14 @@ $br_table = array("cli" => "\n",
                   "cli-server" => "<br/>");
 $br = get($br_table[php_sapi_name()], "<br/>");
 
+$ACCEPTED_EXTENSIONS = array("jpg", "png", "gif", "bmp", "jpeg");
+
 function is_picture($file_name)
 {
     // return true if provided filename is accepted image.
-    return in_array(strtolower(array_pop(explode(".", $file_name))), array("jpg", "png", "gif", "bmp", "jpeg"));
+    global $ACCEPTED_EXTENSIONS;
+    $extension = strtolower(array_pop(explode(".", $file_name)));
+    return in_array($extension, $ACCEPTED_EXTENSIONS);
 }
 
 function get_img_list($img_list, $params=array()) {
