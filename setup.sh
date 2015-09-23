@@ -55,4 +55,8 @@ EOF
                 # echo "wget -o $file $url";
             done
         done
+    ;;
+    start)
+      # start a php server localy (mostly to test rendering)
+      php -S localhost:8000 -t ./www_paintings
 esac
