@@ -29,16 +29,16 @@ function get_img_list($img_list, $params=array()) {
     }
 
 
-    if (get($params["debug"], false) == true) {
+    if (get($params["debug"], false) === true) {
         print_debug("retreiving img list for ".$img_list);
     }
 
     if (! array_key_exists($img_list, get($_SESSION, array())) or
-        get($params["force_refresh"], false) == true or
+        get($params["force_refresh"], false) === true or
         count($_SESSION[$img_list]) == 0)
     {
         $file_path = get_config($img_list, "path");
-        if (get($params["debug"], false) == true) {
+        if (get($params["debug"], false) === true) {
             print_debug("Compute image list from '".$file_path."'");
         }
         $file_list = array();
@@ -52,18 +52,18 @@ function get_img_list($img_list, $params=array()) {
         }
         $file_list = array_filter($file_list, "is_picture");
         $_SESSION[$img_list] = array_values($file_list);
-        if (get_config($img_list, "random", false) == true) {
+        if (get_config($img_list, "random", false) === true) {
             shuffle($_SESSION[$img_list]);
         }
         else {
             sort($_SESSION[$img_list]);
         }
     }
-    elseif (get($params["debug"], false) == true) {
+    elseif (get($params["debug"], false) === true) {
         print_debug("Retreiving image list from SESSION");
     }
 
-    if (get($params["debug"], false) == true) {
+    if (get($params["debug"], false) === true) {
         print_debug(count($_SESSION[$img_list])." img found");
     }
 
@@ -81,7 +81,7 @@ function get_img($img_list, $params=array()) {
     $list = get_img_list($img_list, $params);
     $refresh = get_config($img_list, "refresh");
     $image_path = get_config($img_list, "path")."/".$list[(time() / $refresh % count($list))];
-    if (get($params["debug"], false) == true) {
+    if (get($params["debug"], false) === true) {
         print_debug("image is valid for ".$refresh."s");
         print_debug("displayed img: '".$image_path."'");
     }
@@ -101,5 +101,3 @@ function get_config($img_list, $key, $default=null) {
     }
     return get($GLOBALS["config"][$img_list][$key], $default);
 }
-
-?>

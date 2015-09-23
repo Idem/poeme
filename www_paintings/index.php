@@ -3,7 +3,7 @@ require_once '../utils.php';
 
 if (get($_GET['image'])) {
     $img_path = get_img(get($_GET['image']), $_GET);
-    if ( get($_GET['debug'], false) == false) {
+    if ( get($_GET['debug'], false) === false) {
         header("Content-Type: image/jpeg");
         header("No-Cache: True");
         readfile($img_path);
@@ -76,4 +76,4 @@ Personal stories join hands with History, for this hypnotizing link-up of shots 
     </script>
 </body>
 </html>
-<?php } ?>
+<?php }
