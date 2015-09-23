@@ -37,4 +37,4 @@ before_script:
 
 
 script:
-  - phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
+  - vendor/phpunit/phpunit/phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
