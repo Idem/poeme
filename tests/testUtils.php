@@ -1,5 +1,6 @@
 <?php
 require_once './utils.php';
+error_reporting(E_ALL);
 
 class FunctionTest extends PHPUnit_Framework_TestCase
 {
