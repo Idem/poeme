@@ -7,7 +7,7 @@ install:
   - composer selfupdate
   - composer install
 
-before_script:
+script:
   - |
     cat <<EOF > ./test_config.ini
     [verse1]
@@ -34,7 +34,4 @@ before_script:
     path="./tests/verse5"
     refresh=4
     random=true
-
-
-script:
   - vendor/phpunit/phpunit/phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
