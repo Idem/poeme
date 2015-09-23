@@ -34,4 +34,5 @@ script:
     path="./tests/verse5"
     refresh=4
     random=true
+    EOF
   - vendor/phpunit/phpunit/phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
