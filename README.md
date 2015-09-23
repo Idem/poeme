@@ -1,9 +1,10 @@
 poeme
 =====
 
-Source files for poeme.me
+[![Build Status](https://travis-ci.org/idem/poeme.png?branch=master)](https://travis-ci.org/idem/poeme)
+[![Coverage Status](https://img.shields.io/coveralls/idem/poeme.svg)](https://coveralls.io/r/idem/poeme)
 
-Features are:
-* Display a set of 5 pictures.
-* Each session get a random order for the 5 lists of available pictures.
-* pictures are refreshed every 17 to 21s.
+Displays a picture from a folder, depending on time.
+
+TODO:
+* More documentation on how to use it!
