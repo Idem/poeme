@@ -13,8 +13,9 @@ class FunctionTest extends PHPUnit_Framework_TestCase
 
     public function testConfigLoader() {
         $this->assertArrayHasKey("config", $GLOBALS);
-        $this->assertEquals(array("verse1", "verse2", "verse3", "verse4", "verse5"),
-                            array_keys($GLOBALS["config"]));
+        $expected = array("verse1", "verse2", "verse3", "verse4", "verse5");
+        $config = array_keys($GLOBALS["config"]);
+        $this->assertEquals($expected, $config);
     }
 
     /**
@@ -32,7 +33,8 @@ class FunctionTest extends PHPUnit_Framework_TestCase
     public function testImgList() {
         $sorted_list = get_img_list("verse1");
         sort($sorted_list);
-        $this->assertEquals(array("img_1.gif", "img_2.jpeg"),
+        $expected = array("img_1.gif", "img_2.jpeg");
+        $this->assertEquals($expected,
                             $sorted_list);
     }
 
