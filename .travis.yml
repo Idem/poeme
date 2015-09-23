@@ -36,3 +36,7 @@ script:
     random=true
     EOF
   - vendor/phpunit/phpunit/phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
+  
+addons:
+  code_climate:
+      repo_token: 189bdfb712e781b73520082a2ab5696901dea793f6f334cde0a81b4459f2284e
