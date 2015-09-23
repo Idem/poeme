@@ -33,7 +33,7 @@ path = "./tests/verse5"
 refresh = 4
 random = true
 EOF
-        vendor/phpunit/phpunit/phpunit --colors -c tests/phpunit-conf.xml tests/*.php
+        vendor/phpunit/phpunit/phpunit --colors -c tests/phpunit-conf.xml --coverage-clover build/logs/clover.xml tests/*.php
     ;;
     images)
         # dl dummy images: folder/color/number of images
