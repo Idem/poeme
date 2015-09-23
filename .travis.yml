@@ -35,6 +35,7 @@ before_script:
     refresh = 4
     random = true
     EOF
+  - cat test_config.ini
 
 script:
   - phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
