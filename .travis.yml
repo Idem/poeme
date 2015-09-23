@@ -31,5 +31,7 @@ before_script:
     refresh = 4
     random = true
     EOF
+  - composer selfupdate
 
-script: phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
+script:
+  - phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
