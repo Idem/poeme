@@ -7,7 +7,8 @@ class FunctionTest extends PHPUnit_Framework_TestCase
     * @dataProvider fileList
     */
 	public function testIsPicture($file, $result){
-		$this->assertEquals(is_picture($file), $result);
+	  $check = is_picture($file);
+		$this->assertEquals($check, $result);
 	}
 
     public function testConfigLoader() {
