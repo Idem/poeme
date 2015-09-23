@@ -1,16 +1,8 @@
 <?php
 require_once '../utils.php';
 
-if (get($_GET['image'])) {
-    $img_path = get_img(get($_GET['image']), $_GET);
-    if ( get($_GET['debug'], false) === false) {
-        header("Content-Type: image/jpeg");
-        header("No-Cache: True");
-        readfile($img_path);
-    }
-}
-else
-{ ?>
+return_image_and_die();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -87,4 +79,3 @@ journaux et tablo&iuml;ds, des cartes postales, des brochures...</p>
     </script>
 </body>
 </html>
-<?php }
