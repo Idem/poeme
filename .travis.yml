@@ -3,6 +3,10 @@ php:
   - 5.6
   - hhvm
 
+install:
+  - composer selfupdate
+  - composer install
+
 before_script:
   - |
     cat <<EOF > ./test_config.ini
@@ -31,7 +35,6 @@ before_script:
     refresh = 4
     random = true
     EOF
-  - composer selfupdate
 
 script:
   - phpunit --colors --coverage-html coverage -c tests/phpunit-conf.xml tests/*.php
