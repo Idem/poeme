@@ -11,7 +11,7 @@ $ACCEPTED_EXTENSIONS = array("jpg", "png", "gif", "bmp", "jpeg");
 
 function is_picture($file_name)
 {
-    // return true if provided filename is accepted image.
+    // return true if provided filename is an accepted image format.
     global $ACCEPTED_EXTENSIONS;
     $extension = strtolower(array_pop(explode(".", $file_name)));
     return in_array($extension, $ACCEPTED_EXTENSIONS);
