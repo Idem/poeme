@@ -25,8 +25,8 @@
     }
 
     function full_screen(hide){
-        p = $('#img_container');
-        if (p.hasClass('full_screen') | hide === false){
+        var p = $('#img_container');
+        if (p.hasClass('full_screen') || hide === false){
             p.removeClass('full_screen');
             p.addClass('embeded_screen');
         } else {
@@ -36,7 +36,7 @@
     }
 
     $(document).bind ('keyup.detail', function (k){
-        if (k.keyCode == 27) {
+        if (k.keyCode === 27) {
             toggle_detail(false);
             full_screen(false);
         }
