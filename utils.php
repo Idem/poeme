@@ -29,12 +29,10 @@ function get_img_list($img_list) {
         // pokemon!
     }
 
-
     print_debug("retreiving img list for ".$img_list);
 
     if (! array_key_exists($img_list, get($_SESSION, array())) or
-        get($params["force_refresh"], false) === true or
-        count($_SESSION[$img_list]) == 0)
+        $_GET["force_refresh"] == "true" or count($_SESSION[$img_list]) == 0)
     {
         $file_path = get_config($img_list, "path");
         print_debug("Compute image list from '".$file_path."'");
@@ -49,7 +47,7 @@ function get_img_list($img_list) {
         }
         $file_list = array_filter($file_list, "is_picture");
         $_SESSION[$img_list] = array_values($file_list);
-        if (get_config($img_list, "random", false) === true) {
+        if (get_config($img_list, "random", false) == true) {
             shuffle($_SESSION[$img_list]);
         }
         else {
@@ -100,9 +98,9 @@ function return_image_and_die() {
   // return an image file if asked to and terminate the response.
   // If not asked, code following this call will be ran (main page display).
   global $debug;
-  if (get($_GET['image'])) {
-    $debug = get($_GET['debug'], false);
-    $img_path = get_img(get($_GET['image']));
+  if ($_GET['image']) {
+    $debug = ($_GET['debug'] == "true");
+    $img_path = get_img($_GET['image']);
     if ($debug === false) {
         header("Content-Type: image/jpeg");
         header("No-Cache: True");
